@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.d1tech.util.ExcelRead;
 import com.d1tech.util.TestUtil;
 
 
@@ -18,6 +19,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	public static ExcelRead excelRead;
 	
 	public TestBase() {		
 		
@@ -29,6 +31,12 @@ public class TestBase {
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//Excel'den veri çekme
+		try {
+			excelRead = new ExcelRead();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
