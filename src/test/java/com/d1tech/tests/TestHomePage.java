@@ -1,10 +1,7 @@
 package com.d1tech.tests;
 
-import org.apache.poi.util.SystemOutLogger;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -18,7 +15,7 @@ public class TestHomePage extends TestBase{
 		super();
 	}
 	
-	@BeforeClass
+	@BeforeMethod
 	public void setUp() {
 		initialization();
 		homePage=new HomePage();
@@ -27,21 +24,25 @@ public class TestHomePage extends TestBase{
 	
 	@Test(priority = 1)
 	public void getTitle() {
-		String title = homePage.validateTitle();
-		Assert.assertEquals(title,"n11.com - Alışverişin Uğurlu Adresi");				
+		String titleHomePage = homePage.validateTitle();
+		Assert.assertEquals(titleHomePage,"n11.com - Alışverişin Uğurlu Adresi");
+		System.out.println("homepage title:"+titleHomePage);
+		
+		System.out.println("homepage test1");
 	}
 	
 	@Test(priority = 2)
 	public void clickSignIn() {
 		homePage.girisYap();
 		
+		System.out.println("homepage test2");
+		
 	}
 	
 	
-	@AfterClass
+	@AfterMethod
 	public void tearDown() {
-		System.out.println("tearDown TestHomePage");
-		//driver.quit();
+		driver.quit();		
 	}
 	
 	

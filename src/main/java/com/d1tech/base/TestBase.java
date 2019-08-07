@@ -35,11 +35,14 @@ public class TestBase {
 			e.printStackTrace();
 		}
 		//Excel'den veri çekme
+		
 		try {
 			excelRead = new ExcelRead();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 		
 	//inişılayz ederken yapacağı ayarlamalar
