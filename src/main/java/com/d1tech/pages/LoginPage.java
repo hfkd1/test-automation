@@ -1,6 +1,5 @@
 package com.d1tech.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,18 +8,17 @@ import com.d1tech.base.TestBase;
 
 public class LoginPage extends TestBase{
 	
-	WebDriver driver;
 	
 	@FindBy(id = "loginButton")
 	WebElement loginButton;
 	
-	@FindBy(name = "eMail")
-	WebElement eMail;
+	@FindBy(name = "email")
+	WebElement email;
 	
 	@FindBy(name = "password")
 	WebElement password;
 	
-	WebElement titleText;
+	
 
 	public LoginPage() {
 		
@@ -29,9 +27,9 @@ public class LoginPage extends TestBase{
 	}
 	
 	//EMail alanının doldurulması
-	public void setEMail(String strEMail) {
+	public void setEmail(String strEMail) {
 		
-		eMail.sendKeys(strEMail);
+		email.sendKeys(strEMail);
 		
 	}
 	
@@ -43,16 +41,16 @@ public class LoginPage extends TestBase{
 	}
 	
 	//Doldurulan Email alanının kontrol için alınması
-	public String getEMail() {
+	public String getEmail() {
 		
-		return eMail.getText();
+		return email.getAttribute("value");
 		
 	}
 	
 	//Doldurulan Password alanının kontrol için alınması
 	public String getPassword() {
 		
-		return password.getText();
+		return password.getAttribute("value");
 		
 	}
 	
@@ -64,14 +62,14 @@ public class LoginPage extends TestBase{
 	
 	public String getLoginTitle() {
 		
-		return titleText.getText();
+		return driver.getTitle();
 		
 	}
 	
 	public void login(String strEmail, String strPassword) {
 		
 		//Fill Email field
-		this.setEMail(strEmail);
+		this.setEmail(strEmail);
 	
 		//Fill Password field
 		this.setPassword(strPassword);

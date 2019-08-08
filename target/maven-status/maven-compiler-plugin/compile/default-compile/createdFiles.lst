@@ -1,0 +1,7 @@
+com/d1tech/base/TestBase.class
+com/d1tech/pages/BasketEmptyPage.class
+com/d1tech/util/TestUtil.class
+com/d1tech/pages/HomePage.class
+com/d1tech/pages/LoginPage.class
+com/d1tech/util/ExcelRead.class
+com/d1tech/pages/SearchPage.class

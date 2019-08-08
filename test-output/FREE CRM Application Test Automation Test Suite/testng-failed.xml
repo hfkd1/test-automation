@@ -7,7 +7,6 @@
         <methods>
           <include name="verifyEmail"/>
           <include name="verifyTitle"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.d1tech.tests.TestLoginPage -->

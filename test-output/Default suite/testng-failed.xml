@@ -6,7 +6,7 @@
       <class name="com.d1tech.tests.TestLoginPage">
         <methods>
           <include name="verifyEmail"/>
-          <include name="setUp"/>
+          <include name="verifyTitle"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.d1tech.tests.TestLoginPage -->

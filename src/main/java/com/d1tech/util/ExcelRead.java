@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelRead {
 
 	private String url;
-	private String eMail;
+	private String email;
 	private String password;
 	private String searchItem;
 
@@ -22,10 +22,11 @@ public class ExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			url = sheet.getRow(0).getCell(0).getStringCellValue();
-			eMail = sheet.getRow(0).getCell(1).getStringCellValue();
+			email = sheet.getRow(0).getCell(1).getStringCellValue();
 			password = sheet.getRow(0).getCell(2).getStringCellValue();
 			searchItem = sheet.getRow(0).getCell(3).getStringCellValue();
 			file.close();
+			workbook.close();
 			
 		} catch (FileNotFoundException e) {
 
@@ -42,12 +43,12 @@ public class ExcelRead {
 		this.url = url;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String eMail) {
+		this.email = eMail;
 	}
 
 	public String getPassword() {
